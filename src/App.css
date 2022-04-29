@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato&family=Montserrat:wght@400;600;700&family=Poppins:wght@400;500&family=Roboto:wght@500&family=Yeseva+One&display=swap');
+
 .App {
-  text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 .App-logo {

@@ -1,0 +1,60 @@
+[
+    {
+        "name":"adidas Performance Men's Climacool Leap M Running Shoe",
+        "image":"https://m.media-amazon.com/images/I/61wtdlkPa9L._AC_UY395_.jpg",
+        "description":"The adidas shoe is  good for warm and cool weather",
+        "price":"250$",
+        "quantity":10,
+        "supplier":"Adam"
+
+    },
+    {
+        "name":"Wilson Tennis Rackets",
+        "image":"https://m.media-amazon.com/images/I/71ND5DLddWL._AC_SY679_.jpg",
+        "description":"Its grip size is easy to hold",
+        "price":"150",
+        "quantity":10,
+        "supplier":"Karl"
+    },
+    {
+     "name":"Penn Championship Tennis Balls",
+     "image":"https://m.media-amazon.com/images/I/81zlKPS5MVL._AC_SX679_.jpg",
+     "description":"15 Can 45 Balls.Yellow color balls",
+     "price":"90$",
+     "quantity":10,
+     "supplier":"John"  
+
+    },
+    {
+        "name":"adidas Women's Grand Court Sneak",
+        "image":"https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1f893c7c14424f6f8f72a98101359ecb_9366/Grand_Court_Shoes_White_F36483_01_standard.jpg",
+        "description":"It has  6,7,8,9,10 sizes.",
+        "price":"100$",
+        "quantity":10,
+        "supplier":"Anderson"
+
+    },
+    {
+        "name":"Gamma Sports Pressureless Practice Tennis Balls",
+        "image":"https://m.media-amazon.com/images/I/612A6HEaK8L._AC_SX425_.jpg",
+        "description":"Yellow variant and green variant available",
+        "price":"150$",
+        "quantity":15,
+        "supplier":"Kerlsons"
+
+    },
+
+    {
+        "name":"Gejoy 5 Pieces Tennis Training Equipment",
+        "image":"https://m.media-amazon.com/images/I/71jP8In0WoL._AC_SY450_.jpg",
+        "description":"Contain 5 peace equipments",
+        "price":"500$",
+        "quantity":13,
+        "supplier":"Medas"
+
+    }
+   
+
+
+
+]
