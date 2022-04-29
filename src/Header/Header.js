@@ -6,7 +6,8 @@ import auth from '../firebase.init'
 import { signOut } from 'firebase/auth';
 
 const Header = () => {
-  const [user,loading,error]=useAuthState(auth);
+  const [user]=useAuthState(auth);
+  console.log(user);
   const logout=()=>{
     signOut(auth);
   }
@@ -22,7 +23,7 @@ const Header = () => {
       <Nav.Link as={Link} className='text-dark' to='/category'>Category</Nav.Link>
       {
        user?
-      <button className='text-decoration-none btn btn-link ' onClick={logout}> logout </button>
+      <button className='text-decoration-none btn btn-link  text-dark' onClick={logout}> logout </button>
     :
     <Nav.Link as={Link} className='text-dark' to='/login'>Login</Nav.Link>
       }

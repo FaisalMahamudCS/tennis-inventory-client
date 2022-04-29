@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Form,Button } from 'react-bootstrap';
+import { useSignInWithEmailAndPassword,useSendPasswordResetEmail, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
@@ -12,6 +12,9 @@ const Login = () => {
     const navigate=useNavigate();
 //sign in
 const [ signInWithEmailAndPassword, user,loading, error,] = useSignInWithEmailAndPassword(auth);
+const [sendPasswordResetEmail, sending,error1] = useSendPasswordResetEmail(auth);
+//google signin
+const [signInWithGoogle, user1, loading1, error2] = useSignInWithGoogle(auth);
 
 //redirection
 let from=location.state?.from?.pathname || '/';
@@ -19,14 +22,23 @@ let from=location.state?.from?.pathname || '/';
 const loginSubmit=(event)=>{
     event.preventDefault();
     signInWithEmailAndPassword(email,password);
+ 
+}
+const resetPassword=async()=>{
+   await sendPasswordResetEmail(email);
+   alert('Password Reset Link Send')
+}
+const  googleSignIn=()=>{
+    signInWithGoogle();
 }
 
-if(user){
-navigate(from,{replace:true});
+
+ if(loading ||loading1){
+     return <LoadingSpinner></LoadingSpinner>
 }
-if(loading){
-    return <LoadingSpinner></LoadingSpinner>
-}
+if(user || user1 ){
+    navigate(from,{replace:true});
+    }
 
     return (
         <div className='w-50 card mx-auto mt-5'>
@@ -41,9 +53,15 @@ if(loading){
   
   </Form.Group>
   <p className='text-danger'>{error}</p>
-  <button type='submit' className='btn btn-success'>Login</button>
+  <p className='text-danger'>{error2}</p>
+  <Button variant="primary" type="submit">
+    Submit
+  </Button>
 </Form>
-<Link to='/register' className='text-decoration-none text-center'>New?Register</Link>
+
+<button onClick={resetPassword} className='text-decoration-none btn btn-link  text-dark'>Reset Password</button>
+<Link to='/register' className='text-decoration-none text-dark text-center'>New? Register</Link>
+<button onClick={googleSignIn} className='text-decoration-none btn btn-link  text-dark'>Google Sign In</button>
         </div>
     );
 };
