@@ -14,7 +14,7 @@ const Login = () => {
 const [ signInWithEmailAndPassword, user,loading, error,] = useSignInWithEmailAndPassword(auth);
 
 //redirection
-let fromLocation=location.state?.from?.pathname || '/';
+let from=location.state?.from?.pathname || '/';
 //login handle 
 const loginSubmit=(event)=>{
     event.preventDefault();
@@ -22,7 +22,7 @@ const loginSubmit=(event)=>{
 }
 
 if(user){
-navigate(fromLocation,{replace:true});
+navigate(from,{replace:true});
 }
 if(loading){
     return <LoadingSpinner></LoadingSpinner>

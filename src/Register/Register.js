@@ -2,26 +2,33 @@ import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import auth from '../firebase.init';
 import {useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const Register = () => {
 
     const [email,setEmail]=useState();
     const [password,setPassword]=useState();
+    const location=useLocation();
+    const navigate=useNavigate();
     console.log(email)
- const navigation=useNavigate();
+
     const [createUserWithEmailAndPassword,  user,loading, error] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
     const handleRegisterAuth=(event)=>{
  event.preventDefault();
  createUserWithEmailAndPassword(email,password);
- 
+
+}
  console.log(error);
- 
+ let from=location.state?.from?.pathname || '/';
+
+ if(user){
+    navigate(from,{replace:true});
+    }
  if(loading){
      return <LoadingSpinner></LoadingSpinner>
  }
-    }
+    
     return (
         <div className='w-50 card mx-auto mt-5'>
             <Form  className='m-5' onSubmit={handleRegisterAuth}>
