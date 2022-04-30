@@ -1,8 +1,14 @@
+import { Button } from 'bootstrap';
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const Items = (props) => {
-    const {name,image,description,price,quantity,supplier}=props.item;
+    const {_id,name,image,description,price,quantity,supplier}=props.item;
+ const navigate=useNavigate();
+    const   ItemdetailsNavigation=(_id)=>{
+    navigate(`/inventory/${_id}`)
+    } 
     return (
         <div>
 
@@ -21,6 +27,7 @@ const Items = (props) => {
         Quantity: {quantity} <br></br>
          Supplier: {supplier}
               </Card.Text>
+              <button className='btn btn-success' onClick={()=>ItemdetailsNavigation(_id)} >Stock Update </button>
         </Card.Body>
       </Card>
     </Col>

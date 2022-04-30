@@ -23,7 +23,12 @@ const Header = () => {
       <Nav.Link as={Link} className='text-dark' to='/category'>Category</Nav.Link>
       {
        user?
+       <>
       <button className='text-decoration-none btn btn-link  text-dark' onClick={logout}> logout </button>
+      <Nav.Link as={Link} className='text-dark' to='/manageItem'>Manage Item</Nav.Link>
+      <Nav.Link as={Link} className='text-dark' to='/addItem'>Add Item</Nav.Link>
+      <Nav.Link as={Link} className='text-dark' to='/myItem'>Manage Item</Nav.Link>
+      </>
     :
     <Nav.Link as={Link} className='text-dark' to='/login'>Login</Nav.Link>
       }
