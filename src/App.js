@@ -8,6 +8,8 @@ import Register from './Register/Register';
 import PrivateAuth from './PrivateAuth/PrivateAuth';
 import InventoryItemDetail from './InventoryItemDetail/InventoryItemDetail';
 import ManageInventory from './ManageInventory/ManageInventory';
+import AddInventoryItem from './AddInventoryItem/AddInventoryItem';
+import MyItem from './MyItem/MyItem';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
    <InventoryItemDetail></InventoryItemDetail>
         </PrivateAuth>}></Route>
         <Route path='/manageInventory' element={<ManageInventory></ManageInventory>}></Route>
+        <Route path='/addInventoryItem' element={<AddInventoryItem></AddInventoryItem>}></Route>
+        <Route path='/myItem' element={<MyItem></MyItem>}></Route>
       </Routes>
     </div>
   );

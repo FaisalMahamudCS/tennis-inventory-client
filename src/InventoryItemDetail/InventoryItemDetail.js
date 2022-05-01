@@ -48,7 +48,7 @@ const quantitysetter=()=>{
      .then(res => res.json())
      .then(data =>{
          console.log('success', data);
-         alert('users added successfully!!!');
+         alert('Quantity updated successfully!!!');
         
      })
 
@@ -100,6 +100,7 @@ const quantitysetter=()=>{
 
       </Card>
     </Col>   
+    
      <button className='btn btn-success' onClick={manageInventoryRedirect}>Manage Inventory</button> 
         </div>
     );

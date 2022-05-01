@@ -14,7 +14,7 @@ const Item = () => {
 
           
  {
-    item.map(item=><Items item={item} key={item._id}></Items>)
+    item.slice(0,6).map(item=><Items item={item} key={item._id}></Items>)
 } 
 </Row> 
         </div>
