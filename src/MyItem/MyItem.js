@@ -13,7 +13,22 @@ const MyItem = () => {
      .then(data=>setMyItem(data))
     },[email] )
     const {_id,name,image,description,price,quantity,supplier}=myitem;
-    
+   const  deleteMyItem=(_id)=>{
+    const proceed = window.confirm('Are you sure?',_id);
+    if(proceed){
+        const url = `http://localhost:5000/item/${_id}`;
+        fetch(url, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+           
+            const remainItem = myitem.filter(myitem => myitem._id !== _id);
+            setMyItem(remainItem);
+            alert('data deleted',data);
+        })
+    }
+   }
     return (
         <div>
              <Table striped bordered hover>
@@ -41,8 +56,9 @@ const MyItem = () => {
                 <td>{myitem.price}</td>
                 <td>{myitem.supplier}</td>
                 <td>{myitem.quantity}</td>
-                <td><button  className='btn btn-danger' >Delete</button></td>
+                <td><button  className='btn btn-danger' onClick={()=>deleteMyItem(myitem._id)} >Delete</button></td>
        </tr>)
+
       }
   
  
