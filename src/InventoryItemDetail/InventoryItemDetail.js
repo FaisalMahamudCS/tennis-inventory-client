@@ -3,6 +3,7 @@ import { useParams ,useNavigate} from 'react-router-dom';
 import { Card, Col, Row,Button } from 'react-bootstrap';
 const InventoryItemDetail = () => {
     const [quan,  setQuan]=useState();
+    const [product,setProduct]=useState({});
     const {id}=useParams();
     const [itemDetail,setItemDetail]=useState([]);
     const navigate=useNavigate();
@@ -14,7 +15,7 @@ const manageInventoryRedirect=()=>{
      .then(res=>res.json())
      .then(
          data=>{setItemDetail(data)
-        setQuan(data.quantity);
+       setQuan(data.quantity);
         })
    
     },[id]) 
@@ -27,17 +28,51 @@ const manageInventoryRedirect=()=>{
  
 //console.log(quantities);
 //console.log(quantities);
-console.log(quan);
+//console.log(quan);
 useEffect(()=>{
     //quantitysetter();
 },[])
 const quantitysetter=()=>{
     //a=a-1;
       setQuan( quan-1);
+      const updateQuantity={quan}
+    // console.log( JSON.stringify(quan))
+     const url = `http://localhost:5000/item/${id}`;
+     fetch(url, {
+         method: 'PUT',
+         headers: {
+             'content-type': 'application/json'
+         },
+         body: JSON.stringify(updateQuantity)
+     })
+     .then(res => res.json())
+     .then(data =>{
+         console.log('success', data);
+         alert('users added successfully!!!');
+        
+     })
+
    }
 
   const quantityUpdate=()=>{
-      
+      let newQuantity=quantity-1;
+
+      setProduct(newQuantity);
+
+     const url = `http://localhost:5000/item/${id}`;
+     fetch(url, {
+         method: 'PUT',
+         headers: {
+             'content-type': 'application/json'
+         },
+         body: JSON.stringify(newQuantity)
+     })
+     .then(res => res.json())
+     .then(data =>{
+         console.log('success', data);
+         alert('users added successfully!!!');
+        
+     })
     //setQuantities(quantity-1);
     //   let quant=itemDetaquantity-1;
     //   const newQuantity={...itemDetail,quant};
@@ -57,6 +92,7 @@ const quantitysetter=()=>{
           <Card.Text>
           Price:{price} <br></br>
         Quantity: {quan} <br></br>
+     
          Supplier: {supplier}
               </Card.Text>
               <button className='btn btn-success' onClick={quantitysetter}  >Delivered </button>
