@@ -22,7 +22,23 @@ let from=location.state?.from?.pathname || '/';
 const loginSubmit=(event)=>{
     event.preventDefault();
     signInWithEmailAndPassword(email,password);
- 
+  // const {data}=
+  const emails={email};
+  const url = `http://localhost:5000/login`;
+  
+  fetch(url, {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json'
+      },
+      body: JSON.stringify(emails)
+  })
+  .then(res => res.json())
+  .then(data =>{
+      console.log('success', data);
+     // alert('item added successfully!!!');
+     
+  })
 }
 const resetPassword=async()=>{
    await sendPasswordResetEmail(email);

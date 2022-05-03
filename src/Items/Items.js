@@ -24,7 +24,7 @@ const Items = (props) => {
           </Card.Text>
           <Card.Text>
           Price:{price} <br></br>
-        {/* Quantity: {quantity} <br></br> */}
+       Quantity: {quantity} <br></br> 
          Supplier: {supplier}
               </Card.Text>
                <button className='btn btn-success' onClick={()=>ItemdetailsNavigation(_id)} >Stock Update </button> 
