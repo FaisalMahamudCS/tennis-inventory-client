@@ -19,6 +19,7 @@ const AddInventoryItem = () => {
       
         const data={email,name,image,description,price,quantity,supplier,category};
         const url = `http://localhost:5000/item`;
+      try{
         fetch(url, {
             method: 'POST',
             headers: {
@@ -32,7 +33,11 @@ const AddInventoryItem = () => {
             alert('item added successfully!!!');
            
         })
-   
+      }
+      catch(error){
+        console.log(error)
+
+      }
 
         console.log(data)
     }

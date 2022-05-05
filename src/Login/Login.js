@@ -36,7 +36,9 @@ const loginSubmit=(event)=>{
   .then(res => res.json())
   .then(data =>{
       console.log('success', data);
+      localStorage.setItem('accessToken',data.accessToken)
      // alert('item added successfully!!!');
+     navigate(from,{replace:true});
      
   })
 }
@@ -53,7 +55,7 @@ const  googleSignIn=()=>{
      return <LoadingSpinner></LoadingSpinner>
 }
 if(user || user1 ){
-    navigate(from,{replace:true});
+    
     }
 
     return (

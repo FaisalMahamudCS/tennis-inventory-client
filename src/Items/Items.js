@@ -2,6 +2,7 @@ import { Button } from 'bootstrap';
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import './Item.css';
 
 const Items = (props) => {
     const {_id,name,image,description,price,quantity,supplier}=props.item;
@@ -10,11 +11,11 @@ const Items = (props) => {
     navigate(`/inventory/${_id}`)
     } 
     return (
-        <div>
+        
 
-  {Array.from({ length: 1 }).map((_, idx) => (
+
     <Col>
-      <Card>
+      < Card className='h-100 box d-flex p-2 flex-column '>
         <Card.Img variant="top" src={image} className='h-50'   />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
@@ -27,13 +28,15 @@ const Items = (props) => {
        Quantity: {quantity} <br></br> 
          Supplier: {supplier}
               </Card.Text>
-               <button className='btn btn-success' onClick={()=>ItemdetailsNavigation(_id)} >Stock Update </button> 
+              
+               
         </Card.Body>
+        <button className=' mt-auto button-card' onClick={()=>ItemdetailsNavigation(_id)} >Stock Update </button> 
       </Card>
     </Col>
-  ))}
+  // ))}
 
-        </div>
+        
     );
 };
 
