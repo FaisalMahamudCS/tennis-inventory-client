@@ -4,7 +4,7 @@ import auth from '../firebase.init';
 import {useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
-
+import useToken from '../Hooks/useToken';
 const Register = () => {
 
     const [email,setEmail]=useState();
@@ -14,6 +14,7 @@ const Register = () => {
     console.log(email)
 
     const [createUserWithEmailAndPassword,  user,loading, error] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
+const [token]=useToken(user);
     const handleRegisterAuth=(event)=>{
  event.preventDefault();
  createUserWithEmailAndPassword(email,password);
@@ -22,7 +23,7 @@ const Register = () => {
  console.log(error);
  let from=location.state?.from?.pathname || '/';
 
- if(user){
+ if(token){
     navigate(from,{replace:true});
     }
  if(loading){

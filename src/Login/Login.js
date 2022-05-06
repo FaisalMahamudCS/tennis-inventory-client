@@ -3,6 +3,7 @@ import { Form,Button } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword,useSendPasswordResetEmail, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
+import useToken from '../Hooks/useToken';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const Login = () => {
@@ -13,9 +14,10 @@ const Login = () => {
 //sign in
 const [ signInWithEmailAndPassword, user,loading, error,] = useSignInWithEmailAndPassword(auth);
 const [sendPasswordResetEmail, sending,error1] = useSendPasswordResetEmail(auth);
+
 //google signin
 const [signInWithGoogle, user1, loading1, error2] = useSignInWithGoogle(auth);
-
+const [token]=useToken(user ||user1);
 //redirection
 let from=location.state?.from?.pathname || '/';
 //login handle 
@@ -23,24 +25,24 @@ const loginSubmit=(event)=>{
     event.preventDefault();
     signInWithEmailAndPassword(email,password);
   // const {data}=
-  const emails={email};
-  const url = `http://localhost:5000/login`;
+  // const emails={email};
+  // const url = `http://localhost:5000/login`;
   
-  fetch(url, {
-      method: 'POST',
-      headers: {
-          'content-type': 'application/json'
-      },
-      body: JSON.stringify(emails)
-  })
-  .then(res => res.json())
-  .then(data =>{
-      console.log('success', data);
-      localStorage.setItem('accessToken',data.accessToken)
-     // alert('item added successfully!!!');
-     navigate(from,{replace:true});
+  // fetch(url, {
+  //     method: 'POST',
+  //     headers: {
+  //         'content-type': 'application/json'
+  //     },
+  //     body: JSON.stringify(emails)
+  // })
+  // .then(res => res.json())
+  // .then(data =>{
+  //     console.log('success', data);
+  //     localStorage.setItem('accessToken',data.accessToken)
+  //    // alert('item added successfully!!!');
+    
      
-  })
+  // })
 }
 const resetPassword=async()=>{
    await sendPasswordResetEmail(email);
@@ -54,6 +56,11 @@ const  googleSignIn=()=>{
  if(loading ||loading1){
      return <LoadingSpinner></LoadingSpinner>
 }
+
+if(token){
+  navigate(from,{replace:true});
+}
+
 if(user || user1 ){
     
     }

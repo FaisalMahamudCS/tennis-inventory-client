@@ -4,6 +4,7 @@ import { Card, Col, Row,Button } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 const InventoryItemDetail = () => {
     const [quan,  setQuan]=useState();
+    const [sell,setSell]=useState();
     const [product,setProduct]=useState({});
     const [stock,setStock]=useState();
     const {id}=useParams();
@@ -20,12 +21,13 @@ const manageInventoryRedirect=()=>{
      .then(
          data=>{setItemDetail(data)
        setQuan(data.quantity);
+       setSell(data.sold);
         })
    
     },[id]) 
    
 
- const {_id,image,name,description,quantity,price,supplier}=itemDetail;
+ const {_id,image,name,description,quantity,price,supplier,sold}=itemDetail;
 
  
  //const [quan,  setQuan]=useState(itemDetail.quantity);
@@ -38,10 +40,12 @@ useEffect(()=>{
 },[])
 const quantitysetter=()=>{
     //a=a-1;
+    const solds=sell+1;
     const quantities=quan-1;
     setQuan( quantities);
+    setSell(solds);
 
-      const updateQuantity={quantities}
+      const updateQuantity={quantities,solds}
     // console.log( JSON.stringify(quan))
      const url = `http://localhost:5000/item/${id}`;
      fetch(url, {
@@ -129,9 +133,11 @@ const quantitysetter=()=>{
           </Card.Text>
           <Card.Text>
           Price:{price} <br></br>
+          {quan ===0 ? <p className='text-danger'>Sold Out</p>:quan }
         Quantity: {quan} <br></br>
-     
+      Sold :{sell}  <br></br>
          Supplier: {supplier}
+
               </Card.Text>
               <button className='btn btn-success' onClick={quantitysetter}  >Delivered </button>
                       </Card.Body>

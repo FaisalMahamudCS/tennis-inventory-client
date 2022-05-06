@@ -5,7 +5,7 @@ const useCategory=()=>{
      fetch('http://localhost:5000/category')
      .then(res=>res.json())
      .then(data=>setCategory(data))
-    },[category] ) 
+    },[] ) 
     return [category,setCategory]
 
 }

@@ -2,9 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
 import useItem from '../Hooks/useItem';
 import Items from '../Items/Items';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
 
 const Item = () => {
-    const [item,setItem]=useItem();
+    const [loading,setLoading]=useState(true);
+    // const [item,setItem]=useItem();
+    const [item,setItem]=useState([]);
+    useEffect(()=>{
+     fetch('http://localhost:5000/item')
+     .then(res=>res.json())
+     .then(data=>setItem(data))
+     setLoading(false);
+    },[item] 
+    
+    ) 
+
+
    
    // const items=item.slice(0,6);
     return (
@@ -16,7 +29,8 @@ const Item = () => {
 
           
  {
-    item.slice(0,6).map(item=><Items item={item} key={item._id}></Items>)
+     loading ? <LoadingSpinner></LoadingSpinner>: item.slice(0,6).map(item=><Items item={item} key={item._id}></Items>)
+    // item.slice(0,6).map(item=><Items item={item} key={item._id}></Items>)
 } 
 </Row> 
         </div>
