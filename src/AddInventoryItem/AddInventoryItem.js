@@ -18,7 +18,7 @@ const AddInventoryItem = () => {
         event.preventDefault();
       
         const data={email,name,image,description,price,quantity,supplier,category};
-        const url = `http://localhost:5000/item`;
+        const url = `https://pure-beach-56668.herokuapp.com/item`;
       try{
         fetch(url, {
             method: 'POST',

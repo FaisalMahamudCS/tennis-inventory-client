@@ -12,7 +12,7 @@ const Category = () => {
  //   console.log(categories);
     return (
         // <section className='d-flex justify-content-center align-items-center h-100 min-vh-100 bg-category'>
-        <section  className='d-flex justify-content-center align-items-center h-100 min-vh-100 bg-category p-2' >
+        <section  className='d-flex justify-content-center align-items-center h-100 min-vh-100 bg-category ' >
         <div className='container '>
             <h4 className='text-center p-1 '>Category <BiCategoryAlt /></h4>
             <Row xs={1} md={3} className="g-4">

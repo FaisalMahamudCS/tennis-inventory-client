@@ -16,7 +16,7 @@ const ManageInventory = () => {
    const  deleteItem=(_id)=>{
     const proceed = window.confirm('Are you sure?',_id);
     if(proceed){
-        const url = `http://localhost:5000/item/${_id}`;
+        const url = `https://pure-beach-56668.herokuapp.com/item/${_id}`;
         fetch(url, {
             method: 'DELETE'
         })

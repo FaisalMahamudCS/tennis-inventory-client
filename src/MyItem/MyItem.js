@@ -15,7 +15,7 @@ const MyItem = () => {
     const email=user.email;
     const [myitem,setMyItem]=useState([]);
     useEffect(()=>{
-     fetch(`http://localhost:5000/myitem?email=${email}`,{
+     fetch(`https://pure-beach-56668.herokuapp.com/myitem?email=${email}`,{
        headers:{
            authorization:`bearer ${localStorage.getItem('accessToken')}`
        }  

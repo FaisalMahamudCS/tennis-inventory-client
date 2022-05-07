@@ -9,7 +9,7 @@ const Item = () => {
     // const [item,setItem]=useItem();
     const [item,setItem]=useState([]);
     useEffect(()=>{
-     fetch('http://localhost:5000/item')
+     fetch('https://pure-beach-56668.herokuapp.com/item')
      .then(res=>res.json())
      .then(data=>setItem(data))
      setLoading(false);
