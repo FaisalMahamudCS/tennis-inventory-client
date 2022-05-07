@@ -7,14 +7,16 @@ import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 const PrivateAuth = ({children}) => {
     const [user,loading,error]=useAuthState(auth);
     const location=useLocation();
+   //handle reload error
+if(loading){
+    return <LoadingSpinner></LoadingSpinner>
+    }
+      
+   
     if(!user){
         return <Navigate to='/login' state={{from:location}} replace/>
     }
-//handle reload error
-if(loading){
-return <LoadingSpinner></LoadingSpinner>
-}
-  
+
     return children;
 };
 

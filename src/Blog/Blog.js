@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div className='container'>
+        <div className='container mt-5'>
             <h4>Difference Between JavaScript and Node JS</h4>
             <p>JavaScript is programming language which is used for scripting on web app.Node Js is a JavaScript runtime which is built on chrome V8 engine.
                 We cannot run javascript outside browser.But we can run javascript in  node JS.Javascript is mainly used in client slide(front end) where node js is used in handling

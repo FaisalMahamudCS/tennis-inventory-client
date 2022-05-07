@@ -42,9 +42,9 @@ const [token]=useToken(user);
     <Form.Control type="password" placeholder="Password" onChange={(event)=>setPassword(event.target.value)} />
   </Form.Group>
   <p className='text-danger'>{error}</p>
-  <button type='submit' className='btn btn-success'>Register</button>
+  <button type='submit' className='btn btn-dark'>Register</button>
 </Form>
-<Link  to='/login'>Login </Link>
+<Link className='btn btn-login p-2' to='/login'>Login </Link>
         </div>
     );
 };

@@ -8,7 +8,7 @@ import SupplierChart from '../SupplierChart/SupplierChart';
 
 const Home = () => {
     return (
-        <div>
+        <div className=' overflow-hidden'>
             <Banner></Banner>
              <Item></Item> 
               <Category></Category> 

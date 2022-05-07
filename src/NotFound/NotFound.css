@@ -1,0 +1,18 @@
+#contain{
+
+}
+#h2{
+margin:-10px 0 -30px;
+letter-spacing:-17px;
+opacity:0.8;
+/* color:red; */
+font-size:calc(17vw + 40px);
+letter-spacing: -17px;
+}
+#not-p{
+    opacity:0.8;
+    font-size:20px;
+    font-weight: bold;
+    margin:8 px 0 30px 0;
+    /* color:red; */
+}

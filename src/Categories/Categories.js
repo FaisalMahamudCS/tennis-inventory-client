@@ -20,6 +20,8 @@ const Categories = (props) => {
         </Card.Body>
         <button className=' button-card' > View </button> 
       </Card>
+
+
     </Col>
   
     );

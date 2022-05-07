@@ -7,7 +7,9 @@
     flex-direction: column;
 }
 .button-card{
-    background-color:#b3da2d;
+    /* b3da2d */
+    background-color:#8db40cc5;
+    color:white;
 
     
     display: inline-block;
@@ -25,4 +27,5 @@
 }
 .bg-category{
    background-color: #F2F7F3;
+
 }

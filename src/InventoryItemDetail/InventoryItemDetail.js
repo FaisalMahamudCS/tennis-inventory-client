@@ -2,6 +2,10 @@ import React ,{useEffect,useState} from 'react';
 import { useParams ,useNavigate} from 'react-router-dom';
 import { Card, Col, Row,Button } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const InventoryItemDetail = () => {
     const [quan,  setQuan]=useState();
     const [sell,setSell]=useState();
@@ -58,7 +62,8 @@ const quantitysetter=()=>{
      .then(res => res.json())
      .then(data =>{
          console.log('success', data);
-         alert('Quantity updated successfully!!!');
+         //alert('Quantity updated successfully!!!');
+       toast('Quantity & Sell Updated')
         
      })
 
@@ -133,8 +138,8 @@ const quantitysetter=()=>{
           </Card.Text>
           <Card.Text>
           Price:{price} <br></br>
-          {quan ===0 ? <p className='text-danger'>Sold Out</p>:quan }
-        Quantity: {quan} <br></br>
+       Quantity:   {quan ===0 ? <p className='text-danger'>Sold Out</p>:quan } <br></br>
+      
       Sold :{sell}  <br></br>
          Supplier: {supplier}
 
@@ -156,6 +161,18 @@ const quantitysetter=()=>{
   </Form>
   </div>
      <button className='btn btn-success' onClick={manageInventoryRedirect}>Manage Inventory</button> 
+     <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+/>
+
         </div>
     );
 };

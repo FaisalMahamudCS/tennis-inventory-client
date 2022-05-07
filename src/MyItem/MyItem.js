@@ -2,9 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import {useAuthState} from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import MyItems from '../MyItems/MyItems';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../Hooks/useToken';
+import { signOut } from 'firebase/auth';
+
 const MyItem = () => {
-    const [user]=useAuthState(auth);
+    const [user,loading]=useAuthState(auth);
+    const navigate=useNavigate();
+    //const [token]=useToken(user);
     const email=user.email;
     const [myitem,setMyItem]=useState([]);
     useEffect(()=>{
@@ -13,7 +20,14 @@ const MyItem = () => {
            authorization:`bearer ${localStorage.getItem('accessToken')}`
        }  
      })
-     .then(res=>res.json())
+     .then(res=>{
+         if(res.status===401 || res.status===403){
+           signOut(auth);
+            navigate('/login');
+             
+
+         }   
+     return    res.json()})
      .then(data=>setMyItem(data))
     },[email] )
     const {_id,name,image,description,price,quantity,supplier}=myitem;
@@ -33,17 +47,20 @@ const MyItem = () => {
         })
     }
    }
+   if(loading){
+    return <LoadingSpinner></LoadingSpinner>
+}
     return (
         <div>
              <Table striped bordered hover>
-            <thead>
+            <thead className=''>
             <tr>
       <th>Id</th>
       <th>Name</th>
       <th>Photo</th>
       <th>Description</th>
       <th>Price</th>
-      <th>Dealer</th>
+      <th>Supplier</th>
       <th>Quantity</th>
       <th>Delete</th>
     </tr>

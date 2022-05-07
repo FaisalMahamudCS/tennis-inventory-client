@@ -10,6 +10,8 @@ import InventoryItemDetail from './InventoryItemDetail/InventoryItemDetail';
 import ManageInventory from './ManageInventory/ManageInventory';
 import AddInventoryItem from './AddInventoryItem/AddInventoryItem';
 import MyItem from './MyItem/MyItem';
+import NotFound from './NotFound/NotFound';
+import Blog from './Blog/Blog';
 
 function App() {
   return (
@@ -22,9 +24,12 @@ function App() {
         <Route path='/inventory/:id' element={<PrivateAuth>
    <InventoryItemDetail></InventoryItemDetail>
         </PrivateAuth>}></Route>
-        <Route path='/manageInventory' element={<ManageInventory></ManageInventory>}></Route>
-        <Route path='/addInventoryItem' element={<AddInventoryItem></AddInventoryItem>}></Route>
-        <Route path='/myItem' element={<MyItem></MyItem>}></Route>
+        <Route path='/manageInventory' element={<PrivateAuth><ManageInventory></ManageInventory></PrivateAuth> }></Route>
+        <Route path='/addInventoryItem' element={<PrivateAuth><AddInventoryItem></AddInventoryItem></PrivateAuth> }></Route>
+        <Route path='/myItem' element={<PrivateAuth><MyItem></MyItem></PrivateAuth>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
+         <Route path='*' element={<NotFound></NotFound>}></Route> 
+
       </Routes>
     </div>
   );
