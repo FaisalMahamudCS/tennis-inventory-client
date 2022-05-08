@@ -1,4 +1,4 @@
-# Tennis Store Inventory
+# Tennis  inventory
 The tennis inventory management  system  is a product stock management system.Here user can restock product
 and track delivered item.User can see how many product in stock .Authorized user can manage the product .They
 can add product and delete product.But unauthorized person cannot manipulate data.The system has a dashboard of product stock vs sell per product.
