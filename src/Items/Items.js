@@ -44,10 +44,10 @@ const Items = (props) => {
                 <div class="price">{price}</div>
 
 
-                       {description}
+                      Description: {description}<br></br>
                        Price:{price} <br></br>
        Quantity: {quantity} <br></br> 
-         Supplier: {supplier}
+         Supplier: {supplier} <br></br> 
          
             </div>
             <button className='  button-card ml-2' onClick={()=>ItemdetailsNavigation(_id)} >Stock Update </button> 

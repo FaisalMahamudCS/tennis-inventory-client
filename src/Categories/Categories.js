@@ -13,21 +13,10 @@ const Categories = (props) => {
     return (
 
     <Col>
-      {/* <Card className='  d-flex p-2 flex-column '>
-        <Card.Img variant="top"src={photo} className='img-height'   />
-        <Card.Body>
-          <Card.Title>{category}</Card.Title>
-      
-          <Card.Text>
-           
-              </Card.Text>
-              
-        </Card.Body>
-        <button className=' button-card' > View </button> 
-      </Card> */}
+     
  <div class="box h-100 product-grid">
             <div class="product-image">
-              <img src={photo} className='catagory-img' alt="" srcSet="" />
+              <img src={photo} className='img-height' alt="" srcSet="" />
                 
             </div>
             <div class="product-content">

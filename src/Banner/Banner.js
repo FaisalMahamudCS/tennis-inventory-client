@@ -15,7 +15,7 @@ const Banner = () => {
     <div className="carousel-item active">
     <img
       className="d-block w-100"
-      src="https://i.ibb.co/rf0f7Ny/banner3work.jpg"
+      src="https://i.ibb.co/SvnvVz3/banner-cng-2.jpg"
       alt="Second slide"
       
     />
