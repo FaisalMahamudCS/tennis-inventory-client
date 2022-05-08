@@ -43,7 +43,7 @@ const AddInventoryItem = () => {
     }
     return (
         <div>
-             <div className='w-50 card mx-auto mt-5'>
+             <div className='col col-md-6 card mx-auto  mt-5'>
             <Form onSubmit={addInventoryHandle} className='m-5'>
             <Form.Group className="mb-3" controlId="formGroupEmail">
     <Form.Label>Email address</Form.Label>
