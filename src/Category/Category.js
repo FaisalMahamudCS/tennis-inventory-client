@@ -17,7 +17,7 @@ const Category = () => {
             <h4 className='text-center p-1 '>Category <BiCategoryAlt /></h4>
             <Row xs={1} md={3} className="g-4">
             {
-             category.map(category=> <Categories category={category}  ></Categories>)
+             category.map(category=> <Categories category={category}  key={category._id} ></Categories>)
             }
             </Row>
         </div>

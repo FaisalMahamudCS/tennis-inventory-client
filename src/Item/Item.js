@@ -6,7 +6,7 @@ import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
 
 const Item = () => {
     const [loading,setLoading]=useState(true);
-    // const [item,setItem]=useItem();
+    
     const [item,setItem]=useState([]);
     useEffect(()=>{
      fetch(`https://pure-beach-56668.herokuapp.com/item`)
@@ -18,8 +18,7 @@ const Item = () => {
     ) 
 
 
-   
-   // const items=item.slice(0,6);
+  
     return (
         <section className='d-flex justify-content-center align-items-center h-100 min-vh-100 bg-category'>
         <div className='container'>
@@ -29,8 +28,9 @@ const Item = () => {
 
           
  {
+     //loading spinner at product
      loading ? <LoadingSpinner></LoadingSpinner>: item.slice(0,6).map(item=><Items item={item} key={item._id}></Items>)
-    // item.slice(0,6).map(item=><Items item={item} key={item._id}></Items>)
+ 
 } 
 </Row> 
         </div>

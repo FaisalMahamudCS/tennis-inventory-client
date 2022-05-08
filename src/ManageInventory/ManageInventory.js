@@ -32,7 +32,7 @@ const ManageInventory = () => {
    }
     return (
         <div className='mt-5'>
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
             <thead className=''>
             <tr>
       <th>Id</th>

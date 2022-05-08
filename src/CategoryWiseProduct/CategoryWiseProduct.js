@@ -6,7 +6,9 @@ import CategoryWiseProducts from '../CategoryWiseProducts/CategoryWiseProducts';
 const CategoryWiseProduct = () => {
     const [categoryProduct,setCategoryProduct]=useState([]);
     const {category}=useParams();
+    //get param id
     useEffect(()=>{
+        //fetch from server
      fetch(`https://pure-beach-56668.herokuapp.com/category/${category}`)
      .then(res=>res.json())
      .then(data=>setCategoryProduct(data))
@@ -25,8 +27,7 @@ const CategoryWiseProduct = () => {
  {
 categoryProduct.map(categoryProduct=> <CategoryWiseProducts  categoryProduct={categoryProduct} key={categoryProduct._id} ></CategoryWiseProducts>)
     
-    //  loading ? <LoadingSpinner></LoadingSpinner>: item.slice(0,6).map(item=><Items item={item} key={item._id}></Items>)
-    // item.slice(0,6).map(item=><Items item={item} key={item._id}></Items>)
+    
 } 
 </Row> 
         </div>

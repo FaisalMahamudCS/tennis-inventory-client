@@ -16,7 +16,7 @@ const AddInventoryItem = () => {
     const [category,setCategory]=useState();
     const addInventoryHandle=(event)=>{
         event.preventDefault();
-      
+      //data send destructure
         const data={email,name,image,description,price,quantity,supplier,category};
         const url = `https://pure-beach-56668.herokuapp.com/item`;
       try{
@@ -39,7 +39,7 @@ const AddInventoryItem = () => {
 
       }
 
-        console.log(data)
+      
     }
     return (
         <div>

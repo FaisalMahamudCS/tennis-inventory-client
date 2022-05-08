@@ -14,12 +14,13 @@ const Register = () => {
     console.log(email)
 
     const [createUserWithEmailAndPassword,  user,loading, error] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
-const [token]=useToken(user);
+;
     const handleRegisterAuth=(event)=>{
  event.preventDefault();
  createUserWithEmailAndPassword(email,password);
 
 }
+const [token]=useToken(user);
  console.log(error);
  let from=location.state?.from?.pathname || '/';
 
@@ -31,7 +32,7 @@ const [token]=useToken(user);
  }
     
     return (
-        <div className='w-50 card mx-auto mt-5'>
+        <div className='col col-md-6 card mx-auto mt-5'>
             <Form  className='m-5' onSubmit={handleRegisterAuth}>
   <Form.Group className="mb-3" controlId="formGroupEmail">
     <Form.Label>Email address</Form.Label>

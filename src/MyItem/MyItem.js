@@ -52,7 +52,7 @@ const MyItem = () => {
 }
     return (
         <div>
-             <Table striped bordered hover>
+             <Table striped bordered hover responsive>
             <thead className=''>
             <tr>
       <th>Id</th>

@@ -4,24 +4,26 @@ import { Card, Col, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 const Categories = (props) => {
     const {_id,category,photo,quantity}=props.category;
+    //destructuring
     const navigate=useNavigate();
     
     const categorywiseproduct=(category)=>{
+//nevigate to categorywise product
       navigate(`/categorywiseproduct/${category}`)
     }
-    // const {quantity}=props.category.quantity;
+  
     return (
 
     <Col>
      
- <div class="box h-100 product-grid">
-            <div class="product-image">
+ <div className="box h-100 product-grid">
+            <div className="product-image">
               <img src={photo} className='img-height' alt="" srcSet="" />
                 
             </div>
-            <div class="product-content">
+            <div className="product-content">
                
-                <h3 class="title">{category}</h3>
+                <h3 className="title">{category}</h3>
                
          
             </div>

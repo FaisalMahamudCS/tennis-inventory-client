@@ -13,7 +13,7 @@ import MyItem from './MyItem/MyItem';
 import NotFound from './NotFound/NotFound';
 import Blog from './Blog/Blog';
 import CategoryWiseProduct from './CategoryWiseProduct/CategoryWiseProduct';
-
+import Footer from './Footer/Footer';
 function App() {
   return (
     <div className="App">
@@ -33,6 +33,7 @@ function App() {
          <Route path='*' element={<NotFound></NotFound>}></Route> 
 
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

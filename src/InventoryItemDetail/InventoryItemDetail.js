@@ -130,10 +130,10 @@ const quantitysetter=()=>{
       <Col>
       <div className="container card w-75">
 <div className="row ">
-  <div className="col-6">
+  <div className="col-lg-6 col-12" >
   <img  src={image} alt="" srcSet="" />
   </div>
-  <div className="col-6">
+  <div className="col-lg-6 col-12">
   <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>

@@ -22,7 +22,7 @@ const [sendPasswordResetEmail, sending,error1] = useSendPasswordResetEmail(auth)
 
 //google signin
 const [signInWithGoogle, user1, loading1, error2] = useSignInWithGoogle(auth);
-const [token]=useToken(user ||user1);
+const [token]=useToken(user || user1);
 //redirection
 let from=location.state?.from?.pathname || '/';
 //login handle 
@@ -67,7 +67,7 @@ if(user || user1 ){
     }
 
     return (
-        <div className='w-50 card mx-auto mt-5'>
+        <div className='col col-md-6 card mx-auto mt-5'>
             <Form onSubmit={loginSubmit} className='m-5'>
   <Form.Group className="mb-3" controlId="formGroupEmail">
     <Form.Label>Email address</Form.Label>
