@@ -45,7 +45,7 @@ const [token]=useToken(user);
   <p className='text-danger'>{error}</p>
   <button type='submit' className='btn btn-dark'>Register</button>
 </Form>
-<Link className='btn btn-login p-2' to='/login'>Login </Link>
+<Link className='btn btn-dark p-2' to='/login'>Login </Link>
         </div>
     );
 };
