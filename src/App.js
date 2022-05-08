@@ -12,6 +12,7 @@ import AddInventoryItem from './AddInventoryItem/AddInventoryItem';
 import MyItem from './MyItem/MyItem';
 import NotFound from './NotFound/NotFound';
 import Blog from './Blog/Blog';
+import CategoryWiseProduct from './CategoryWiseProduct/CategoryWiseProduct';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>} ></Route>
+        <Route path='/categorywiseproduct/:category' element={<CategoryWiseProduct></CategoryWiseProduct>}></Route>
         <Route path='/inventory/:id' element={<PrivateAuth>
    <InventoryItemDetail></InventoryItemDetail>
         </PrivateAuth>}></Route>

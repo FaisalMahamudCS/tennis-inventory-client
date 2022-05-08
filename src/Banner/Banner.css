@@ -1,4 +1,4 @@
-.carousel-item{
+/* .carousel-item{
     height:100vh;
     min-width:300px;
 
@@ -30,6 +30,27 @@ line-height: 1.8;
     font-weight: bold;
 display: inline-block;
 }
-button{
+.banner-btn {
     border-color:#b3da2d ;
 }
+
+  } */
+
+
+  .carousel-caption h5{
+    font-size:60px;
+    text-transform: uppercase;
+    letter-spacing:2px;
+    margin-top:30px;
+    font-weight: 900;
+}
+
+@media only screen and (max-width: 768px) {
+    .carousel-caption h5{
+        font-size:30px;
+        text-transform: uppercase;
+        letter-spacing:1px;
+        margin-top:10px;
+        font-weight: 500;
+    }
+    }

@@ -2,7 +2,7 @@ import {useEffect,useState} from 'react';
 const useItem=()=>{
     const [item,setItem]=useState([]);
     useEffect(()=>{
-     fetch('http://localhost:5000/item')
+     fetch('https://pure-beach-56668.herokuapp.com/item')
      .then(res=>res.json())
      .then(data=>setItem(data))
     },[item] ) 

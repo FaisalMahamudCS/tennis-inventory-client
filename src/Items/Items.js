@@ -15,7 +15,7 @@ const Items = (props) => {
 
 
     <Col>
-      < Card className='h-100 box d-flex p-2 flex-column '>
+      {/* < Card className='h-100 box d-flex p-2 flex-column '>
         <Card.Img variant="top" src={image} className='h-50'   />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
@@ -32,7 +32,28 @@ const Items = (props) => {
                
         </Card.Body>
         <button className=' mt-auto button-card' onClick={()=>ItemdetailsNavigation(_id)} >Stock Update </button> 
-      </Card>
+      </Card> */}
+      <div class="box h-100 product-grid">
+            <div class="product-image">
+              <img src={image} alt="" srcSet="" />
+                
+            </div>
+            <div class="product-content">
+               
+                <h3 class="title">{name}</h3>
+                <div class="price">{price}</div>
+
+
+                       {description}
+                       Price:{price} <br></br>
+       Quantity: {quantity} <br></br> 
+         Supplier: {supplier}
+         
+            </div>
+            <button className='  button-card ml-2' onClick={()=>ItemdetailsNavigation(_id)} >Stock Update </button> 
+        </div>
+       
+     
     </Col>
   // ))}
 

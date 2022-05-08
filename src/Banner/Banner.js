@@ -19,10 +19,10 @@ const Banner = () => {
       alt="Second slide"
       
     />
-    <div className="carousel-caption d-none d-md-block">
+    <div className="carousel-caption ">
 <h5>Tennis Sports Inventory</h5>
 <p>In this inventory management system you can track your product and check</p>
-<button>More </button>
+<button  className='btn btn-dark'>More </button>
     </div>
     </div>
     <div className="carousel-item">
@@ -31,10 +31,10 @@ const Banner = () => {
       src="https://i.ibb.co/rf0f7Ny/banner3work.jpg"
       alt="Second slide"
     />
-      <div className="carousel-caption d-none d-md-block">
+      <div className="carousel-caption ">
 <h5>Manage Your All Product</h5>
 <p>In this inventory management system you can track your product and find product categorywise</p>
-<button>More </button>
+<button className='btn btn-dark'>More </button>
     </div>
     </div>
     <div className="carousel-item">
@@ -43,10 +43,10 @@ const Banner = () => {
       src="https://i.ibb.co/NrVc1XX/banner-inv.jpg"
       alt="Third slide"
     />
-      <div className="carousel-caption d-none d-md-block">
+      <div className="carousel-caption ">
 <h5> DashBoard</h5>
 <p>You can find dashboard Product</p>
-<button>More </button>
+<button  className='btn btn-dark'>More </button>
     </div>
     </div>
   </div>

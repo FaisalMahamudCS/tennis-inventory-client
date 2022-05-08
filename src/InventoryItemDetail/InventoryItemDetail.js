@@ -5,7 +5,7 @@ import { Form } from 'react-bootstrap';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import './InventoryItemDetail.css'
 const InventoryItemDetail = () => {
     const [quan,  setQuan]=useState();
     const [sell,setSell]=useState();
@@ -20,7 +20,7 @@ const manageInventoryRedirect=()=>{
     navigate('/manageInventory')
 }
     useEffect(()=>{
-     fetch(`http://localhost:5000/item/${id}`)
+     fetch(`https://pure-beach-56668.herokuapp.com/item/${id}`)
      .then(res=>res.json())
      .then(
          data=>{setItemDetail(data)
@@ -68,7 +68,7 @@ const quantitysetter=()=>{
      })
 
    }
-
+//restock handle
    
   const  handleRestock=(event)=>{
     event.preventDefault();
@@ -126,11 +126,15 @@ const quantitysetter=()=>{
     // setQuantities(newQuantity);
   }
     return (
-        <div className='w-50 mx-auto'>
+        <div className='mt-5'>
       <Col>
-      <Card>
-        <Card.Img variant="top" src={image} className='h-50'   />
-        <Card.Body>
+      <div className="container card w-75">
+<div className="row ">
+  <div className="col-6">
+  <img  src={image} alt="" srcSet="" />
+  </div>
+  <div className="col-6">
+  <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>
           {description}
@@ -144,23 +148,30 @@ const quantitysetter=()=>{
          Supplier: {supplier}
 
               </Card.Text>
-              <button className='btn btn-success' onClick={quantitysetter}  >Delivered </button>
+              <button className='btn btn-dark' onClick={quantitysetter}  >Delivered </button>
                       </Card.Body>
 
-      </Card>
+  </div>
+</div>
+</div>
+
+   
     </Col>   
-    <div className='card w-50 m-3'>
+    <div className='card w-50 container mx-auto m-3'>
     <Form onSubmit={handleRestock} className='m-5'>
   <Form.Group className="mb-3" controlId="formGroupEmail">
     <Form.Label>Restock Quantity</Form.Label>
     <Form.Control type="number" onChange={(event)=>setStock(event.target.value)} placeholder="Enter Quantity" required />
   </Form.Group>
-  <Button variant="primary" type="submit">
+  <Button variant="dark" type="submit">
   Restock
   </Button>
   </Form>
   </div>
-     <button className='btn btn-success' onClick={manageInventoryRedirect}>Manage Inventory</button> 
+  <div className='d-flex align-item-center justify-content-center'>
+  <button className='btn btn-dark ' onClick={manageInventoryRedirect}>Manage Inventory</button> 
+  </div>
+   
      <ToastContainer
 position="top-right"
 autoClose={5000}

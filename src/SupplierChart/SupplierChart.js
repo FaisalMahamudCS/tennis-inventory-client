@@ -6,7 +6,7 @@ const SupplierChart = () => {
     const [item,setItem]=useItem();
 
     return (
-        <div className='bg-category mt-5'>
+        <div className='bg-category container mt-5'>
            
       <h4 className='text-center'>Per Supplier Quantity VS Sold</h4>
     
@@ -28,7 +28,7 @@ const SupplierChart = () => {
 
 <h4 className='text-center'>Per product Quantity VS Sold</h4>
 
-        <BarChart width={window.screen.width} height={550}    margin={{
+        <BarChart width={window.screen.width} height={window.screen.height}    margin={{
             top: 0,
             right: 30,
             left: 180,
