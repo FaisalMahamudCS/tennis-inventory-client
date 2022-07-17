@@ -4,7 +4,6 @@ and track delivered item.User can see how many product in stock .Authorized user
 can add product and delete product.But unauthorized person cannot manipulate data.The system has a dashboard of product stock vs sell per product.
 ## Client Side Link   https://sports-gear-inventory.web.app/
 ## Server Slide Link https://pure-beach-56668.herokuapp.com/
-## Client side repository link  Client Side code : https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-FaisalMahamudCS
 
 * User can view product
 * User can view supplier wise bar chart per stock and sold item
